@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>枯叶&#39;s Blog</title>
+  
+  <subtitle>But silence is the highest contempt</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.520.sb/"/>
+  <updated>2020-07-05T13:57:01.625Z</updated>
+  <id>https://www.520.sb/</id>
+  
+  <author>
+    <name>枯叶</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GoldenEye压力测试脚本</title>
+    <link href="https://www.520.sb/2020/04/19/GoldenEye%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/"/>
+    <id>https://www.520.sb/2020/04/19/GoldenEye%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</id>
+    <published>2020-04-18T16:00:00.000Z</published>
+    <updated>2020-07-05T13:57:01.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>玩压力测试的朋友肯定都知道，测试机器防御用的一款工具，下面说的这款 GoldenEye是一款Layer 7拒绝服务测试工具，采用Python语言开发。这是一款HTTP DoS测试工具，可帮助研究人员对目标项目进行安全测试。</p><p>参数帮助<br>-u：指定需要使用的user-agent列表文件（默认随机生成）；<br>-w：指定并行worker数量（默认50）；<br>-s：指定并行socket数量（默认30）；<br>-m：指定使用的HTTP方法，“get“、”post“或”random“（默认get）；<br>-d：启用调试模式（默认false）；<br>-n：关闭SSL证书验证功能（默认true）；<br>-h：查看帮助信息</p><p>使用帮助</p><p>首先你需要一台抗投诉服务器或者是发包机<br>推荐使用git克隆整个项目到服务器<br>第一步跳转到脚本所在目录<br>cd /GoldenEye<br>第二步为脚本添加执行权限<br>chmod +x goldeneye.py<br>第三步脚本的使用帮助指令<br>./goldeneye.py -h<br>压测指令为<br>./goldeneye.py <a href="http://xxx.com" target="_blank" rel="noopener">http://xxx.com</a> -w 1000 -s 500</p><p>GoldenEye项目地址：<a href="https://github.com/jseidl/GoldenEye" target="_blank" rel="noopener">https://github.com/jseidl/GoldenEye</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;玩压力测试的朋友肯定都知道，测试机器防御用的一款工具，下面说的这款 GoldenEye是一款Layer 7拒绝服务测试工具，采用Python语言开发。这是一款HTTP DoS测试工具，可帮助研究人员对目标项目进行安全测试。&lt;/p&gt;
+&lt;p&gt;参数帮助&lt;br&gt;-u：指定需要使用的
+      
+    
+    </summary>
+    
+    
+      <category term="Python脚本" scheme="https://www.520.sb/categories/Python%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="CC压力测试" scheme="https://www.520.sb/tags/CC%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="Python脚本" scheme="https://www.520.sb/tags/Python%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cloudflare自定义节点</title>
+    <link href="https://www.520.sb/2020/04/18/Cloudflare%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8A%82%E7%82%B9/"/>
+    <id>https://www.520.sb/2020/04/18/Cloudflare%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8A%82%E7%82%B9/</id>
+    <published>2020-04-17T16:00:00.000Z</published>
+    <updated>2020-07-05T13:57:01.613Z</updated>
+    
+    <content type="html"><![CDATA[<p>Cloudflare是非常良心的企业了，它的cdn服务的口碑是非常好的，但是随着cloudflare的用户多了，还有一些不为人知的原因，cloudflare的cdn的速度越来越慢，对于中国大陆的用户来说，也是使用的美国的节点。毕竟入口带宽是有限的，所以在用网高峰期，也就是晚上是非常卡顿的。这个cloudflare也是一个非常有趣的公司，他通过cf partner提供的服务比他自己提供的服务要好一些，至少cf partner的服务可以使用cncme的接入方式和ip的接入方式，但是官网的只能使用NS方式。但cloudflare的DNS服务的体验真的不是很爽，没法暂停解析，没法编辑只能删除重建。所以大家如果不想更改NS服务器可以使用cf partner提供的服务。而且cf partner的节点据说还要快一些。这里提供比较稳定的cf partner的服务提供者。</p><p>笨牛平台：<a href="http://cdn.bnxb.com" target="_blank" rel="noopener">http://cdn.bnxb.com</a></p><p>CF的百度云合作IP段<br>162.159.208.4-162.159.208.103<br>162.159.209.4-162.159.209.103<br>162.159.210.4-162.159.210.103<br>162.159.211.4-162.159.211.103<br>第1步:<br>打开笨牛：域名接入——添加域名——选择CNAME接入——进入主要设置（此时解析并未生效）<br>第2步:<br>在笨牛添加你的@ www解析到你的服务器ip 这个时候不要着急直接解析笨牛提供的官方CNAME解析<br>第3步:<br>在你的域名管理平台 A记录解析你自己喜欢的cloudflare节点<br>比如上面CF的百度云合作IP段 又或者1.0.0.1<br>第4步:<br>等待解析生效<br>建议:<br>建议使用DNSPod的分路线解析 将国外解析路线指向笨牛提供的官方CNAME 国内解析路线指向你自定义的节点</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Cloudflare是非常良心的企业了，它的cdn服务的口碑是非常好的，但是随着cloudflare的用户多了，还有一些不为人知的原因，cloudflare的cdn的速度越来越慢，对于中国大陆的用户来说，也是使用的美国的节点。毕竟入口带宽是有限的，所以在用网高峰期，也就是晚
+      
+    
+    </summary>
+    
+    
+      <category term="Cloudflare" scheme="https://www.520.sb/categories/Cloudflare/"/>
+    
+    
+      <category term="Cloudflare" scheme="https://www.520.sb/tags/Cloudflare/"/>
+    
+      <category term="CDN" scheme="https://www.520.sb/tags/CDN/"/>
+    
+  </entry>
+  
+</feed>
